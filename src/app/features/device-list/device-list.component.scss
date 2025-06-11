@@ -1,0 +1,19 @@
+.device-card {
+  margin: 20px;
+  .full-width-table {
+    width: 100%;
+  }
+  .device-id {
+    font-size: 0.75rem;
+    color: #666;
+  }
+  .volume-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    mat-progress-bar {
+      flex-grow: 1;
+    }
+  }
+}
