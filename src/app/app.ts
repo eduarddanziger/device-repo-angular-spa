@@ -6,9 +6,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   template: `
-    <header>{{ title }}</header>
     <router-outlet></router-outlet>
-    <footer>Angular 20</footer>
+    <footer>
+      © {{ currentYear }} - {{ title }}
+    </footer>
   `,
   imports: [
     RouterOutlet
@@ -16,5 +17,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'device-repo-angular-spa';
+  protected title = 'Audio Device Repository Client';
+  protected currentYear = new Date().getFullYear();
 }

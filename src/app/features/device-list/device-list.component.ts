@@ -25,7 +25,7 @@ import { AudioDeviceService, AudioDevice } from '../../core/services/audio-devic
 })
 export class DeviceListComponent implements OnInit {
   devices: AudioDevice[] = [];
-  displayedColumns: string[] = ['name', 'flowType', 'volumes', 'status'];
+  displayedColumns: string[] = ['name', 'volumes', 'lastChange'];
 
   constructor(private deviceService: AudioDeviceService) {}
 
