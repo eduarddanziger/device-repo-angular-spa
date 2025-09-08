@@ -24,7 +24,7 @@ export class AudioDeviceService {
     return this.http.get<AudioDevice[]>(this.apiUrl).pipe(
       map(devices => devices.map(device => ({
         ...device,
-        LastChange: new Date(device.updateDate).toLocaleString()
+        LastChange: new Date(device.updateDate)
       })))
     );
   }

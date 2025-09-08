@@ -16,6 +16,13 @@ Visualizes an audio devices repository by means of Angular. The backend ASP.Net 
 - **Styling**: SCSS with Material theming
 - **Build Tools**: Angular CLI 20.0.1
 
+## Requirements
+
+- Node.js: 20.19.x or 22.12.x (Angular CLI v20 requires >=20.19 or >=22.12)
+- npm: 10+
+
+A `.nvmrc` file is included to pin Node.js 22.12.0.
+
 ## Development environment
 
 ### Starting ASP.NET Core Web API Server
@@ -29,17 +36,27 @@ cd DeviceListServer
 dotnet run --launch-profile http
 ```
 
-### Installation
-- Install Node.js from [nodejs.org](https://nodejs.org/)
-- Roll up repository client from the source code and compile:
+### Setup & Installation
+
+If you see an error like "The Angular CLI requires a minimum Node.js version of v20.19 or v22.12", upgrade Node first.
+
 ```bash
-# Clone the repository
+# Install nvm if you don't have it
+curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Restart your terminal so that nvm is available, then:
+cd device-repo-angular-spa
+nvm install 22.12.0
+nvm use
+node -v  # should be v22.12.0
+npm -v   # should be 10+
+```
+
+Install dependencies and run:
+
+```bash
+# From project root
 git clone [repository-url]
-
-# Install dependencies
-npm install
-
-# Start development server
-ng serve
-
+cd device-repo-angular-spa
+npm ci
+npm start  # or: npx ng serve
 ```
